@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.2.0
-Release:	%mkrel 0.%{pre}.1
+Release:	%mkrel 0.%{pre}.2
 Summary:	Class that provides multiple interfaces for sending emails
 License:	PHP License
 Group:		Development/PHP
@@ -51,7 +51,7 @@ pear install --nodeps --soft --force --register-only \
 %preun
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{pear_name} >/dev/null || :
+        %{upstream_name} >/dev/null || :
 fi
 
 %files
