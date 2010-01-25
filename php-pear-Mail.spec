@@ -4,12 +4,13 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.2.0
-Release:	%mkrel 0.%{pre}.4
+Release:	%mkrel 0.%{pre}.5
 Summary:	Class that provides multiple interfaces for sending emails
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/%{upstream_name}
 Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}%{pre}.tgz
+Patch0:		Mail-1.2.0b1-CVE-2009-4023,4111.diff
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
@@ -27,6 +28,8 @@ validation utility class.
 %prep
 %setup -q -c
 mv package.xml %{upstream_name}-%{version}%{pre}/%{upstream_name}.xml
+
+%patch0 -p0 -b .CVE-2009-4023,4111
 
 %install
 rm -rf %{buildroot}
