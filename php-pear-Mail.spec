@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.2.0
-Release:	%mkrel 0.%{pre}.6
+Release:	%mkrel 0.%{pre}.7
 Summary:	Class that provides multiple interfaces for sending emails
 License:	PHP License
 Group:		Development/PHP
