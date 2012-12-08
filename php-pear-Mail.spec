@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.2.0
-Release:	%mkrel 0.%{pre}.9
+Release:	%mkrel 0.%{pre}.8
 Summary:	Class that provides multiple interfaces for sending emails
 License:	PHP License
 Group:		Development/PHP
@@ -16,8 +16,6 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildRequires:	php-pear
 BuildArch:	noarch
-# because it was broken out and the one doing it was pretty careless...
-Conflicts:	php-pear < 1:1.9
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -59,7 +57,7 @@ pear install --nodeps --soft --force --register-only \
 %if %mdkversion < 201000
 if [ "$1" -eq "0" ]; then
     pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
+        %{pear_name} >/dev/null || :
 fi
 %endif
 
@@ -69,3 +67,41 @@ fi
 %{_datadir}/pear/%{_class}.php
 %{_datadir}/pear/packages/%{upstream_name}.xml
 
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 1.2.0-0.b1.7mdv2011.0
++ Revision: 667621
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 1.2.0-0.b1.6mdv2011.0
++ Revision: 607120
+- rebuild
+
+* Mon Jan 25 2010 Oden Eriksson <oeriksson@mandriva.com> 1.2.0-0.b1.5mdv2010.1
++ Revision: 496118
+- P0: security fix for CVE-2009-4023,4111
+
+* Wed Nov 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.0-0.b1.4mdv2010.1
++ Revision: 470143
+- spec cleanup
+- use pear installer
+- don't ship tests, even in documentation
+- own all directories
+- use rpm filetriggers starting from mandriva 2010.1
+
+* Mon Nov 09 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.0-0.b1.3mdv2010.1
++ Revision: 463810
+- use rpm filetriggers to register starting from mandriva 2010.1
+
+* Thu Oct 01 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.0-0.b1.2mdv2010.0
++ Revision: 452035
+- fix %%postun
+
+* Sun Sep 27 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.0-0.b1.1mdv2010.0
++ Revision: 450209
+- import php-pear-Mail
+
+
+* Fri Sep 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.0-0.b1.1mdv2010.0
+- split out from php-pear package
