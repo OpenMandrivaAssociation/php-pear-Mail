@@ -8,7 +8,7 @@ Summary:	Class that provides multiple interfaces for sending emails
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/%{upstream_name}
-Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}%{pre}.tgz
+Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
@@ -30,7 +30,7 @@ mv package.xml %{upstream_name}-%{version}/%{upstream_name}.xml
 %install
 rm -rf %{buildroot}
 
-cd %{upstream_name}-%{version}%{pre}
+cd %{upstream_name}-%{version}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
 rm -rf %{buildroot}%{_datadir}/pear/.??*
 
