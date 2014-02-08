@@ -3,7 +3,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.2.0
-Release:	1
+Release:	2
 Summary:	Class that provides multiple interfaces for sending emails
 License:	PHP License
 Group:		Development/PHP
