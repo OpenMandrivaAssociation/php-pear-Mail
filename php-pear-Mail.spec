@@ -4,7 +4,7 @@
 Summary:	Class that provides multiple interfaces for sending emails
 Name:		php-pear-%{modname}
 Version:	1.2.0
-Release:	6
+Release:	7
 License:	PHP License
 Group:		Development/PHP
 Url:		http://pear.php.net/package/%{modname}
