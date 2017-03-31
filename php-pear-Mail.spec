@@ -3,8 +3,8 @@
 
 Summary:	Class that provides multiple interfaces for sending emails
 Name:		php-pear-%{modname}
-Version:	1.2.0
-Release:	9
+Version:	1.3.0
+Release:	1
 License:	PHP License
 Group:		Development/PHP
 Url:		http://pear.php.net/package/%{modname}
@@ -40,4 +40,4 @@ install -m 644 %{modname}.xml %{buildroot}%{_datadir}/pear/packages
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/%{_class}.php
 %{_datadir}/pear/packages/%{modname}.xml
-
+%{_datadir}/pear/test/Mail
